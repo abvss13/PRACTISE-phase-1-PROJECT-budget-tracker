@@ -35,3 +35,14 @@ function renderTransactions() {
     }
     calculateBalance(exchangeRate);
   }
+
+  let url = "https://v6.exchangerate-api.com/v6/15cfd02f9c537f84a4c24f5d/latest/USD";
+function fetchExchangeRate() {
+    fetch(url, { method: "GET" })
+    .then(response => response.json())
+    .then(data => {
+      exchangeRate = data.conversion_rates;
+      renderTransactions();
+    })
+    .catch(error => console.log(error));
+}
