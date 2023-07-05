@@ -46,3 +46,6 @@ function fetchExchangeRate() {
     })
     .catch(error => console.log(error));
 }
+
+let exchangeRate = {};
+fetchExchangeRate(); 
