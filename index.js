@@ -20,4 +20,7 @@ function calculateBalance(exchangeRate) {
         expenses += transaction.amount * exchangeRate[transaction.currency];
       }
     }
+    balanceEl.textContent = `$${(total / exchangeRate.USD).toFixed(2)}`;
+  incomeEl.textContent = `$${(income / exchangeRate.USD).toFixed(2)}`;
+  expensesEl.textContent = `$${Math.abs(expenses / exchangeRate.USD).toFixed(2)}`;
 }
