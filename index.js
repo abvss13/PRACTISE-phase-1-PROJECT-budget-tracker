@@ -24,3 +24,14 @@ function calculateBalance(exchangeRate) {
   incomeEl.textContent = `$${(income / exchangeRate.USD).toFixed(2)}`;
   expensesEl.textContent = `$${Math.abs(expenses / exchangeRate.USD).toFixed(2)}`;
 }
+
+function renderTransactions() {
+    transactionsListEl.innerHTML = ""; 
+    for (let i = 0; i < transactions.length; i++) {
+      let transaction = transactions[i];
+      let li = document.createElement("li");
+      li.innerHTML = `${transaction.category}: ${transaction.currency} ${transaction.amount.toFixed(2)} <button class="delete" data-index="${i}">Delete</button>`;
+      transactionsListEl.appendChild(li);
+    }
+    calculateBalance(exchangeRate);
+  }
