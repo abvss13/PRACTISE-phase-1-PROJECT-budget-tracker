@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" type="style/css" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Budget Tracker</h1>
         <div class="summary">
-           
+            <div class="balance">
+                <h2>Balance</h2>
+                <p id="balance">$0.00</p>
+            </div>
+            <div class="income">
+                <h3>Income</h3>
+                <p id="income">$0.00</p>
+            </div>
+            <div class="expenses">
+                <h3>Expenses</h3>
+                <p id="expenses">$0.00</p>
+            </div>
         </div>
         <div class="transactions">
-            <h2>transactions</h2>
+            <h2>Transactions</h2>
             <table>
                 <thead>
                     <tr>
@@ -20,12 +35,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                  
+                 
                 </tbody>
             </table>
         </div>
-        
     </div>
-   
+    <script src="index.js"></script>
 </body>
 </html>
