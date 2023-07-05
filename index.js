@@ -62,3 +62,11 @@ addTransactionFormEl.addEventListener("submit", function(event) {
       renderTransactions();
     }
   });
+
+  transactionsListEl.addEventListener("click", function(event) {
+    if (event.target.classList.contains("delete")) {
+      let index = parseInt(event.target.getAttribute("data-index"));
+      transactions.splice(index, 1); 
+      renderTransactions();
+    }
+  });
