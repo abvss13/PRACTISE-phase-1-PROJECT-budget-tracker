@@ -7,3 +7,17 @@ const categoryInputEl = document.getElementById("category");
 const amountInputEl = document.getElementById("amount");
 
 let transactions = [] ;
+
+function calculateBalance(exchangeRate) {
+    let total = 0;
+    let income = 0;
+    let expenses = 0;
+    for (let transaction of transactions) {
+      total += transaction.amount * exchangeRate[transaction.currency];
+      if (transaction.amount > 0) {
+        income += transaction.amount * exchangeRate[transaction.currency];
+      } else {
+        expenses += transaction.amount * exchangeRate[transaction.currency];
+      }
+    }
+}
