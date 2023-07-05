@@ -5,3 +5,5 @@ const transactionsListEl = document.getElementById("transactions-list");
 const addTransactionFormEl = document.getElementById("addtransaction");
 const categoryInputEl = document.getElementById("category");
 const amountInputEl = document.getElementById("amount");
+
+let transactions = [] ;
