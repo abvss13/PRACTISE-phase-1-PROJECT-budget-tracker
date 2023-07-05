@@ -49,3 +49,16 @@ function fetchExchangeRate() {
 
 let exchangeRate = {};
 fetchExchangeRate(); 
+
+addTransactionFormEl.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let category = categoryInputEl.value.trim();
+    let currency = "USD";
+    let amount = parseFloat(amountInputEl.value.trim());
+    if (category && amount) {
+      transactions.push({category: category, currency: currency, amount: amount}); // add the new transaction to the transactions array
+      categoryInputEl.value = "";
+      amountInputEl.value = "";
+      renderTransactions();
+    }
+  });
